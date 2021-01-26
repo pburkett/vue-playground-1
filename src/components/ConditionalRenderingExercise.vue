@@ -10,7 +10,7 @@
             screen.
           </p>
           <!-- add code to element below -->
-          <div class="player-card text-center">
+          <div v-if="false" class="player-card text-center">
             <div>
               <img :src="state.player.photo" />
             </div>
@@ -38,7 +38,7 @@
             toggle the value to true to get it to show up again.
           </p>
           <!-- add code to element below -->
-          <div class="player-card text-center">
+          <div v-if="state.player.showPlayer" class="player-card text-center">
             <div>
               <img :src="state.player.photo" />
             </div>
@@ -67,23 +67,23 @@
             to add another condition.
           </p>
           <!-- v-if comparing grade and 90 -->
-          <div>
+          <div v-if="state.grade >= 89.5">
             <p>The grade is 'A'.</p>
           </div>
           <!-- v-else-if comparing grade and 80 -->
-          <div>
+          <div v-else-if="state.grade >= 79.5">
             <p>The grade is 'B'.</p>
           </div>
           <!-- v-else-if comparing grade and 70 -->
-          <div>
+          <div v-else-if="state.grade >= 69.5">
             <p>The grade is 'C'.</p>
           </div>
           <!-- v-else-if comparing grade and 60 -->
-          <div>
+          <div v-else-if="state.grade >= 59.5">
             <p>The grade is 'D'.</p>
           </div>
           <!-- v-else to display if all the others fail -->
-          <div>
+          <div v-else>
             <p>The grade is 'F'.</p>
           </div>
         </div>
@@ -135,7 +135,9 @@ export default {
         name: "D$",
         position: "WR",
         number: 4,
+        showPlayer: true,
       },
+      grade: 91
     });
     return {
       state,
